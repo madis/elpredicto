@@ -1,4 +1,6 @@
 require 'webmock/rspec'
+require 'dry-struct'
+require_relative '../config/initializers/dry_types'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

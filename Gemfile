@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'dry-struct'
 gem 'httparty'
 
 group :development, :test do
