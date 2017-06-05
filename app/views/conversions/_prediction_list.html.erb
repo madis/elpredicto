@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Week</th>
+      <th>Rate</th>
+      <th>Difference</th>
+      <th>Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- predictions.each do |p| %>
+      <tr class="prediction">
+        <td><%= p.year %></td>
+        <td><%= p.week %></td>
+        <td><%= number_with_precision p.rate %></td>
+        <td><%= number_with_precision p.diff %></td>
+        <td><%= p.rank %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
