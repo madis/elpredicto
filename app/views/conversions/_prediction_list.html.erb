@@ -1,4 +1,6 @@
-<table>
+Predicted exchange rates depending on when you exchange:
+
+<table class="table">
   <thead>
     <tr>
       <th>Year</th>
@@ -20,3 +22,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= line_chart predictions.map {|p| [p.week, p.diff]} %>

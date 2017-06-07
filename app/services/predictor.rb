@@ -10,7 +10,7 @@ class Predictor
   def predict(amount:, max_wait:)
     current_rate = rates_with_time(max_wait).first[0]
     sorted_rates = rates_with_time(max_wait).sort_by { |(rate, _time)| rate }
-    collect_predictions(sorted_rates, amount, current_rate)
+    collect_predictions(sorted_rates, amount, current_rate).sort_by(&:week)
   end
 
   private

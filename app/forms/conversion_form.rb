@@ -16,7 +16,7 @@ class ConversionForm < Dry::Struct::Value
 
     required(:amount, :float).filled(:float?)
     required(:max_wait, :int).filled(:int?)
-    required(:base_currency)
-    required(:target_currency)
+    required(:base_currency, :string).filled(:str?)
+    required(:target_currency, :string).filled(:str?)
   end
 end

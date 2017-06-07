@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'chartkick'
 gem 'dry-struct'
 gem 'dry-validation'
 gem 'httparty'
