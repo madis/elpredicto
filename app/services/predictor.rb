@@ -15,7 +15,7 @@ class Predictor
 
   private
 
-  attr_reader :model, :rates
+  attr_reader :model
 
   def collect_predictions(rates, amount, current_rate)
     rates.each_with_index.map do |(rate, time), rank|

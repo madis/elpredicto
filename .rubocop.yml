@@ -1,4 +1,8 @@
-# Offense count: 5
+AllCops:
+  Excludes:
+    - bin/*
+    - node_modules/**/*
+
 Style/Documentation:
   Enabled: false
 

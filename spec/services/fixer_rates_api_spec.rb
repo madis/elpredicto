@@ -1,12 +1,4 @@
-require 'spec_helper'
-require 'pry'
-
-require 'httparty'
-class FixerRatesApi
-  def self.rates(date:, base:)
-    JSON.parse(HTTParty.get("https://api.fixer.io/#{date}", base: base))
-  end
-end
+require_relative '../../app/services/fixer_rates_api'
 
 RSpec.describe FixerRatesApi do
   it 'gets them rates' do

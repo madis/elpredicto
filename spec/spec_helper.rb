@@ -1,8 +1,10 @@
 require 'webmock/rspec'
 require 'dry-struct'
 require_relative '../config/initializers/dry_types'
+require_relative 'support/fixture_helpers'
 
 RSpec.configure do |config|
+  config.include FixtureHelpers
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
