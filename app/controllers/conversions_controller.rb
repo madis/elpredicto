@@ -1,6 +1,7 @@
 class ConversionsController < ApplicationController
   def new
     render locals: {
+      errors: conversion_form.errors,
       conversion: conversion_form.to_h,
       currencies: ConversionForm::CURRENCIES,
       wait_times: ConversionForm::WAIT_TIMES,

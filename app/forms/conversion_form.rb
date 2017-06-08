@@ -12,11 +12,17 @@ class ConversionForm < Dry::Struct::Value
   WAIT_TIMES = (1..25).to_a.freeze
 
   VALIDATION = Dry::Validation.Form do
-    configure { config.type_specs = true }
+    configure do
+      config.type_specs = true
 
-    required(:amount, :float).filled(:float?)
-    required(:max_wait, :int).filled(:int?)
-    required(:base_currency, :string).filled(:str?)
-    required(:target_currency, :string).filled(:str?)
+      def currency_symbol?(value)
+        CURRENCIES.include?(value)
+      end
+    end
+
+    required(:amount).filled(:float?)
+    required(:max_wait).filled(:int?)
+    required(:base_currency).filled(:str?, included_in?: CURRENCIES)
+    required(:target_currency).filled(:str?)
   end
 end

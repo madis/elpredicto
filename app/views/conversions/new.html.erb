@@ -1,4 +1,12 @@
-
+<div class="row">
+  <div class="col">
+    <% errors.each do |field, error| %>
+      <div class="alert alert-danger">
+        <%= [field.to_s.humanize, error].join(' ') %>
+      </div>
+    <% end %>
+  </div>
+</div>
 <div class="row">
   <div class="col">
     <%= form_with url: conversions_path, local: true, method: :get,
@@ -17,7 +25,7 @@
       <% end %>
       <%= f.label :max_wait do %>
         Max wait time (weeks):
-        <%= f.select :max_wait, options_for_select(wait_times), {}, class: 'form-control' %>
+        <%= f.select :max_wait, options_for_select(wait_times, conversion[:max_wait]), {}, class: 'form-control' %>
       <% end %>
       <%= f.submit 'Calculate', class: 'form-control btn btn-primary' %>
     <% end %>
