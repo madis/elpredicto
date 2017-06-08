@@ -25,6 +25,9 @@ class ConversionsController < ApplicationController
   end
 
   def predictor
-    Predictor.new model: Models::RandomAroundCenter.new
+    Predictor.new model: ModelSource.prepare(
+      conversion_form[:base_currency],
+      conversion_form[:target_currency]
+    )
   end
 end
